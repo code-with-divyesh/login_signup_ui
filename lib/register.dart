@@ -13,7 +13,7 @@ class _MyregisterState extends State<Myregister> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/login.png"), fit: BoxFit.cover)),
+              image: AssetImage("assets/register.png"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -21,7 +21,7 @@ class _MyregisterState extends State<Myregister> {
             Container(
               padding: EdgeInsets.only(left: 35, top: 130),
               child: Text(
-                "Welcome\n back",
+                "Create \naccount",
                 style: TextStyle(
                     fontSize: 33,
                     color: Colors.white,
@@ -31,13 +31,36 @@ class _MyregisterState extends State<Myregister> {
             SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5,
+                    top: MediaQuery.of(context).size.height * 0.4,
                     left: 35,
                     right: 35),
                 child: Column(
                   children: [
                     TextField(
                       decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.black)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.white)),
+                          hintText: "Name",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          fillColor: Colors.grey.shade100,
+                          filled: true),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.black)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.white)),
                           hintText: "Email",
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10)),
@@ -50,6 +73,12 @@ class _MyregisterState extends State<Myregister> {
                     TextField(
                       obscureText: true,
                       decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.black)),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.white)),
                           hintText: "Password",
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10)),
@@ -76,7 +105,9 @@ class _MyregisterState extends State<Myregister> {
                           child: IconButton(
                             icon: Icon(Icons.arrow_forward),
                             color: Colors.white,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, 'Login');
+                            },
                           ),
                         )
                       ],
@@ -84,33 +115,6 @@ class _MyregisterState extends State<Myregister> {
                     SizedBox(
                       height: 40,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, 'Register');
-                            },
-                            child: Text(
-                              "Sign up",
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontSize: 22,
-                                color: Color(0xff4c505b),
-                              ),
-                            )),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Forgot Password",
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontSize: 22,
-                                color: Color(0xff4c505b),
-                              ),
-                            )),
-                      ],
-                    )
                   ],
                 ),
               ),
