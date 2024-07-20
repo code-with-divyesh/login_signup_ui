@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class MyLogin extends StatefulWidget {
-  const MyLogin({super.key});
+class Myregister extends StatefulWidget {
+  const Myregister({super.key});
 
   @override
-  State<MyLogin> createState() => _MyLoginState();
+  State<Myregister> createState() => _MyregisterState();
 }
 
-class _MyLoginState extends State<MyLogin> {
+class _MyregisterState extends State<Myregister> {
   @override
   Widget build(BuildContext context) {
     return Container(
